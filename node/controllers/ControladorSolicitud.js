@@ -27,7 +27,7 @@ export const modificarSolicitud = async (req,res) => {
     }
 }
 
-export const guardarSolicitud = async (req,res) => {
+export const crearSolicitud = async (req,res) => {
     try {
         await ModeloSolicitud.create(req.body)
         res.json({

@@ -1,5 +1,5 @@
 import express from 'express';
-import { consultarAllSolicitudes, consultarSolicitud, guardarSolicitud } from '../controllers/ControladorSolicitud.js';
+import { consultarAllSolicitudes, consultarSolicitud, crearSolicitud } from '../controllers/ControladorSolicitud.js';
 import { consultarAllUsuarios, consultarUsuario } from '../controllers/ControladorUsuario.js';
 
 const router = express.Router();
@@ -11,6 +11,6 @@ router.get('/usuarios/:id/', consultarUsuario)
 // Rutas para solicitud
 router.get('/solicitudes', consultarAllSolicitudes)
 router.get('/solicitudes/:id/', consultarSolicitud)
-router.post('/solicitudes/', guardarSolicitud)
+router.post('/solicitudes/', crearSolicitud)
 
 export default router;
