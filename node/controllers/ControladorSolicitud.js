@@ -33,7 +33,9 @@ export const crearSolicitud = async (req,res) => {
         res.json({
             "message": "Solicitud creada con exito"
         })
-    } catch {
+    } catch (error) {
         res.json({message: error.message})
     }
 }
+
+// Metodo para modificar el estado de una solicitud UPDATE solicitud (status) VALUES ()
