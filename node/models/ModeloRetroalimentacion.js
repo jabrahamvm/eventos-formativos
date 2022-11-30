@@ -2,6 +2,7 @@ import db from '../database/db.js';
 // Importamos sequelize
 import { DataTypes } from "sequelize";
 import ModeloSolicitud from './ModeloSolicitud.js';
+import ModeloResponsable from './ModeloResponsable.js';
 
 const ModeloRetroalimentacion = db.define('retroalimentacion',
     {
@@ -26,5 +27,12 @@ ModeloRetroalimentacion.belongsTo(ModeloSolicitud,{
     foreignKey: "idSolicitud",
     allowNull: false,
 });
+
+ModeloResponsable.hasMany(ModeloRetroalimentacion, {foreignKey:"idSolicitud"});
+ModeloRetroalimentacion.belongsTo(ModeloResponsable,{
+    foreignKey: "idAutor",
+    allowNull: false,
+});
+
 
 export default ModeloRetroalimentacion;

@@ -3,7 +3,7 @@ import ModeloRetroalimentacion from "../models/ModeloRetroalimentacion.js";
 // getRetroalimentaciones
 export const getRetroalimentaciones = async (req,res) => {
     try {
-        const retroalimentaciones = await ModeloRetroalimentacion.findAll()
+        const retroalimentaciones = await ModeloRetroalimentacion.findAll({where: {idSolicitud:req.params.id}})
         res.json(retroalimentaciones)
     } catch (error){
         res.json({message: error.message})
