@@ -33,19 +33,19 @@ import { useState, useEffect} from 'react';
 const URL = 'http://localhost:8000/api/solicitudes/';
 
 const Home = () => {
-    const [blogs, setBlogs] = useState([])
+    const [solicitudes, setSolicitudes] = useState([])
     useEffect(()=>{
-        getBlogs()
+        getSolicitudes()
     },[])
 
-    const getBlogs = async () => {
+    const getSolicitudes = async () => {
         const res = await axios.get(URL)
-        setBlogs(res.data)
+        setSolicitudes(res.data)
     }
 
-    const deleteBlog = async (id) => {
+    const deleteSolicitud = async (id) => {
         await axios.delete(`${URL}${id}/`)
-        getBlogs()
+        getSolicitudes()
     }
 
     return (
@@ -61,14 +61,14 @@ const Home = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {blogs.map((blog) => (
-                                <tr key={blog.id}>
-                                    <td>{blog.titulo}</td>
-                                    <td>{blog.descripcion}</td>
-                                    <td>{blog.estado}</td>
+                            {solicitudes.map((solicitud) => (
+                                <tr key={solicitud.id}>
+                                    <td>{solicitud.titulo}</td>
+                                    <td>{solicitud.descripcion}</td>
+                                    <td>{solicitud.estado}</td>
                                     <td>
                                         {/*<link to={`/edit/${blog.id}`} className="btn btn-info">Editar</link>*/}
-                                        <button onClick={() => deleteBlog(blog.id)} className='btn btn-danger'>Eliminar</button>
+                                        <button onClick={() => deleteSolicitud(solicitud.id)} className='btn btn-danger'>Eliminar</button>
                                     </td>
                                 </tr>
                             ))}
