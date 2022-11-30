@@ -40,4 +40,13 @@ export const crearSolicitud = async (req,res) => {
     }
 }
 
+
+export const consultarMisSolicitudes = async (req,res) => {
+    try {
+        const solicitudes = await ModeloSolicitud.findAll({where: {idResponsable:req.params.id}})
+        res.json(solicitudes)
+    } catch (error){
+        res.json({message: error.message})
+    }
+}
 // Metodo para modificar el estado de una solicitud UPDATE solicitud (status) VALUES ()

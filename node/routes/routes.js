@@ -1,7 +1,7 @@
 import express from 'express';
 import { crearEvento, detallesEvento, mostrarEventos } from '../controllers/ControladorEvento.js';
-import { consultarMisSolicitudes, consultarResponsable } from '../controllers/ControladorResponsable.js';
-import { consultarAllSolicitudes, consultarSolicitud, crearSolicitud, modificarSolicitud } from '../controllers/ControladorSolicitud.js';
+import { consultarResponsable } from '../controllers/ControladorResponsable.js';
+import { consultarAllSolicitudes, consultarSolicitud, crearSolicitud, modificarSolicitud,consultarMisSolicitudes } from '../controllers/ControladorSolicitud.js';
 import { consultarAllUsuarios, consultarUsuario } from '../controllers/ControladorUsuario.js';
 
 const router = express.Router();
@@ -23,6 +23,7 @@ router.post('/eventos/', crearEvento)
 
 // Rutas para retroalimentaciones de solicitud
 router.get('/responsable/:id/',consultarResponsable)
+router.get('/responsable/:id/solicitudes/', consultarMisSolicitudes)
 
 
 // Rutas para Estudiante

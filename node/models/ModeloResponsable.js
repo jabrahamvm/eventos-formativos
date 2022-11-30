@@ -1,7 +1,6 @@
 import db from '../database/db.js';
 // Importamos sequelize
 import { DataTypes } from "sequelize";
-import ModeloSolicitud from './ModeloSolicitud.js';
 
 const ModeloResponsable = db.define('Responsable',
     {
