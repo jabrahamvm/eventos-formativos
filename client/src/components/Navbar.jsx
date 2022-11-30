@@ -4,7 +4,44 @@ import Logo from '../img/logo.png'
 
 const Navbar = () => {
     return (
-        <div className="navbar">
+
+        <nav>
+            <ul>
+                <li>
+                    <div className="logo">
+                        <img src={Logo} alt="" />
+                    </div>
+                </li>
+                    
+                <li>
+                    <Link className='link' to="/?cat=science">
+                        <h6>SCIENCE</h6>
+                    </Link>
+                </li>
+
+                <li>
+                    <Link className='link' to="/?cat=tech">
+                        <h6>TECH</h6>
+                    </Link>
+                </li>
+
+                <li>
+                    <Link className='link' to="/?cat=design">
+                        <h6>DESIGN</h6>
+                    </Link>
+                </li>
+
+                <li>
+                    <Link className='button' to="/?cat=tech">
+                        <h6>Iniciar Sesión</h6>
+                    </Link>
+                </li>
+              
+            </ul>
+        </nav>
+
+    /*
+    <div className="navbar">
             <div className="container">
                 <div className="logo">
                     <img src={Logo} alt="" />
@@ -30,6 +67,8 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
+    */ 
+        
     )
 }
 

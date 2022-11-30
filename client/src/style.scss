@@ -1,104 +1,97 @@
-$lightGreen : #b9e7e7; // You can use this anywhere in the app now!
+:root {
+    --black: #171321;
+    --dkblue: #0d314b;
+    --plum: #4b0d49;
+    --hotmag: #ff17e4;
+    --magenta: #e310cb;
+    --aqua: #86fbfb;
+    --orange: #D23228;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+}
 
-.app{
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* nav */
+
+nav {
+    font-size: 100%;
+    padding: 1rem;
+    
+  }
+  
+  nav h1 a {
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
-    .container{
-        width: 1024px;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+  
+  nav a {
+    color: var(--black);
+    text-decoration: none;
+    display: block;
+  }
+  
+  nav a:hover{
+    color: var(--orange);
+  }
 
-        .link{
-            text-decoration: none;
-            color: inherit;
-        }
+  .button {
+    color: white;
+    background: var(--orange);
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
 
-
-
-        //LOGIN & REGISTER Use login common names
-
-        .auth{
-            display : flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: $lightGreen;
-        }
-
-        h1{
-            font-size: 20px;
-            color: teal;
-            margin-bottom: 20px;
-        }
-
-        form{
-            display: flex;
-            flex-direction: column;
-            padding: 50px;
-            background-color: white;
-            width: 200px;
-            gap: 20px;
-
-            input{
-                padding: 10px;
-                border: none;
-                border-bottom: 1px solid gray;
-            }
-
-            button{
-                padding: 10px;
-                bottom: none;
-                background-color: teal;
-                cursor: pointer;
-                color: white;
-            }
-        }
-
-        //NAVBAR
-        .navbar{
-            .container{
-                padding: 10px 0px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                .logo{
-                    img{
-                        width: 120px;
-                    }
-                }
-                .links{
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-
-                    h6{
-                        font-size: 16px;
-                        font-weight: 300;
-                    }
-
-                    span{
-                        cursor: pointer;
-                    }
-
-                    .write{
-                        background-color: $lightGreen;
-                        width: 50px;
-                        height: 50px;
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-weight: 300;
-                        border: 1px solid white;
-
-                        &:hover{
-                            color: teal;
-                            background-color: white;
-                            border: 1px solid teal;
-                        }
-                    }
-                }
-            }
-        }
-
+  .logo{
+    img{
+        width: 80px;
     }
 }
+
+/* Eventos */
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.eventosDisponibles ul li {
+    list-style-type: none;
+    padding: 1rem;
+}
+
+
+  /*
+  
+  
+
+  */
