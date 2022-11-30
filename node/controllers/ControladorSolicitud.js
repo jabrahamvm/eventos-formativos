@@ -11,6 +11,7 @@ export const consultarAllSolicitudes = async (req,res) => {
 
 export const consultarSolicitud = async (req,res) => {
     try {
+        console.log(req.params.id)
         const solicitud = await ModeloSolicitud.findOne({where: {id:req.params.id}})
         res.json(solicitud)
     } catch (error) {
@@ -20,6 +21,7 @@ export const consultarSolicitud = async (req,res) => {
 
 export const modificarSolicitud = async (req,res) => {
     try {
+        console.log(req.body)
         await ModeloSolicitud.update(req.body, {where: {id:req.params.id}})
         res.json({message:`Modificación a Solicitud ${req.params.id} ha sido procesada con exito.`})
     } catch (error) {

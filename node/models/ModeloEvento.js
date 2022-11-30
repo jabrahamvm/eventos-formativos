@@ -2,6 +2,8 @@ import db from '../database/db.js';
 // Importamos sequelize
 import { DataTypes } from "sequelize"
 
+import ModeloResponsable from './ModeloResponsable.js';
+
 const ModeloEvento = db.define('Evento',
     {
         id:{
@@ -43,5 +45,11 @@ const ModeloEvento = db.define('Evento',
         timestamps: false
     }
 )
+
+ModeloResponsable.hasMany(ModeloEvento, {foreignKey:"idResponsable"});
+ModeloEvento.belongsTo(ModeloResponsable,{
+    foreignKey: "idResponsable",
+    allowNull: false,
+});
 
 export default ModeloEvento;

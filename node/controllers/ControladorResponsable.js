@@ -1,3 +1,19 @@
-// Trabajar con la tabla Solicitud_Usuario y con rol de usuario, esto es con INNER JOINS
+import ModeloResponsable from "../models/ModeloResponsable.js"
 
-// verMisSolicitudes
+export const consultarMisSolicitudes = async (req,res) => {
+    try {
+        const solicitudes = await ModeloResponsable.findAll({where: {idResponsable:req.params.id}})
+        res.json(solicitudes)
+    } catch (error){
+        res.json({message: error.message})
+    }
+}
+
+export const consultarResponsable = async (req,res) => {
+    try {
+        const resp = await ModeloResponsable.findOne({where: {idResponsable:req.params.id}})
+        res.json(resp)
+    } catch (error){
+        res.json({message: error.message})
+    }
+}
