@@ -20,9 +20,6 @@ const DetalleSolicitud = () => {
         setSolicitud(res.data)
     }
 
-
-
-
     return (
         <div className='container'>
             <div className="card">

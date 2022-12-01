@@ -31,7 +31,7 @@ const BotonInscribir = ({idUsuario, idEvento}) => {
     if (Inscritos.includes(idEvento*1)){
         return (
             <form onSubmit={inscripcion}>
-                <button type='submit' className='btn btn-success' disabled>Inscribirme</button>
+                <button type='submit' className='btn btn-success' disabled>Inscrito</button>
             </form>
         )
     } else {
