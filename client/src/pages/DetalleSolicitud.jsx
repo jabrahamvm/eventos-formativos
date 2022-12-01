@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import {Link} from 'react-router-dom' 
+import {Link} from 'react-router-dom';
+import FormRetro from './VerRetro';
 
 const URL = 'http://localhost:8000/api/solicitudes/';
 
@@ -33,8 +34,8 @@ const DetalleSolicitud = () => {
                 <div className="card-footer text-center">
                     <Link to={`/usuario/${idUsuario}/crearEvento/`} className="btn btn-success">Crear Evento</Link>
                 </div>
-                <div className="card-footer text-center">
-                    <Link to={`/solicitudes/${idSolicitud}/retro/`} className="btn btn-success">Retroalimenación</Link>
+                <div>
+                    <FormRetro idSolicitud={idSolicitud}></FormRetro>
                 </div>
             </div>
         </div>
@@ -42,3 +43,4 @@ const DetalleSolicitud = () => {
 }
 
 export default DetalleSolicitud;
+

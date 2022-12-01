@@ -5,26 +5,42 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const URL = 'http://localhost:8000/api/solicitudes/'
 
-const FormRetro = () => {
-    const [retro, setRetro] = useState('')
+const FormRetro = ({idSolicitud}) => {
+    const [retro, setRetro] = useState([])
     useEffect(()=>{
         getRetro()
     },[])
-    const {idSolicitud} = useParams() 
 
     let navigate = useNavigate();
-
+    var values = true;
 
     const getRetro = async () => {
-        const res = await axios.get(`${URL}${idSolicitud}/retro`)
-        console.log(res.data)
-        if(res.data == null) navigate("*")
+        const res = await axios.get(`${URL}${idSolicitud}/retro/`)
+        console.log(res.data.length)
+        console.log(idSolicitud)
+        if(res.data.length === 0) values = false
         setRetro(res.data)
     }
     
+    const mapValues = (retraolimentaciones) => {
+        retraolimentaciones.map((r) => (
+            <ul key={r.idRetroalimentacion}>
+                <li>{r.descripcion}</li>
+            </ul>
+        ))
+    }
+
     return (
-        <div>{retro.descripcion}</div>
+        <div>
+            {
+                retro.map((r) => (
+                    <ul key={r.idRetroalimentacion}>
+                        <li>{r.descripcion}</li>
+                    </ul>
+                ))
+            }
+        </div>
     )
 }
 
-export default FormRetro
+export default FormRetro;
