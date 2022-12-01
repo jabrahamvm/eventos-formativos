@@ -15,13 +15,13 @@ const Navbar = () => {
                 </li>
                     
                 <li>
-                    <Link className='link' to="/">
+                    <Link className='link' to="/EventosInscritos/5">
                         <h6>Mis Eventos</h6>
                     </Link>
                 </li>
 
                 <li>
-                    <Link className='link' to="/TodasSolicitudes/6">
+                    <Link className='link' to="/TodasSolicitudes/5">
                         <h6>Mis Solicitudes</h6>
                     </Link>
                 </li>

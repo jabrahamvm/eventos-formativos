@@ -42,7 +42,7 @@ const TodosMisEventos = () => {
                                     <td>{evento.tipo}</td>
                                     <td>{evento.fechaInicio}</td>
                                     <td>{evento.fechaFin}</td>
-                                    <td><Link to={`Usuario/5/DetalleEvento/${evento.id}`} className='btn btn-primary mt-2 mb-2'>Ver más</Link></td>
+                                    <td><Link to={`/Usuario/5/DetalleEvento/${evento.id}`} className='btn btn-primary mt-2 mb-2'>Ver más</Link></td>
                                     <td>
                                     </td>
                                 </tr>
