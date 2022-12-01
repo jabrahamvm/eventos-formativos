@@ -1,19 +1,21 @@
 import React from 'react'
-import axios from 'axios';
+import axios from 'axios'
 import { useState, useEffect} from 'react';
 
-const URL = 'http://localhost:8000/api/solicitud/';
 
-const DetalleEvento = () => {
-    const [solicitudes, setSolicitudes] = useState([])
-    useEffect(()=>{
-        getSolicitudes()
-    },[])
+const URL = 'http://localhost:8000/api/solicitudes/';
 
-    const getSolicitudes = async () => {
+const TodosEventos = () => {
+    const [Eventos, setEventos] = useState([])
+    useEffect(() => {
+        getEventos()
+    })
+
+    const getEventos = async () => {
         const res = await axios.get(URL)
-        setSolicitudes(res.data)
+        setEventos(res.data)
     }
+
 
     return (
         <div className='container'>
@@ -28,11 +30,10 @@ const DetalleEvento = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {solicitudes.map((solicitud) => (
-                                <tr key={solicitud.id}>
-                                    <td>{solicitud.titulo}</td>
-                                    <td>{solicitud.descripcion}</td>
-                                    <td>{solicitud.estado}</td>
+                            {Eventos.map((evento) => (
+                                <tr key={evento.id}>
+                                    <td>{evento.titulo}</td>
+                                    <td>{evento.descripcion}</td>
                                     <td>
                                         {/*<link to={`/edit/${blog.id}`} className="btn btn-info">Editar</link>*/}
                                         {/*<button onClick={() => deleteSolicitud(solicitud.id)} className='btn btn-danger'>Eliminar</button>*/}
@@ -47,4 +48,4 @@ const DetalleEvento = () => {
     )
 }
 
-export default DetalleEvento;
+export default TodosEventos

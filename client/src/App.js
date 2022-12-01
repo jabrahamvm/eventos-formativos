@@ -8,11 +8,13 @@ import {
 } from "react-router-dom";
 
 // Import react files so that it loads entire page
-import Register from "./pages/Register"
-import Login from "./pages/Login"
-import Home from "./pages/Home"
-import Write from "./pages/Write"
-import Single from "./pages/Single"
+import TodosEventos from "./pages/TodosEventos"
+import DetalleEvento from "./pages/DetalleEvento"
+import TodasSolicitudes from "./pages/TodasSolicitudes"
+import DetalleSolicitud from "./pages/DetalleSolicitud"
+import FormCrearSolicitud from "./pages/FormCrearSolicitud"
+import FormInscripcionEvento from "./pages/FormInscripcionEvento"
+import FormRetro from "./pages/FormRetro"
 
 // Components on seperate folder
 import Footer from "./components/Footer"
@@ -40,25 +42,33 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home/>
+        element: <TodosEventos/>
       },
       {
-        path: "/write",
-        element: <Write/>,
+        path: "/DetalleEvento/:id",
+        element: <DetalleEvento/>
       },
       {
-        path: "/post/:id",
-        element: <Single/>,
+        path: "/TodasSolicitudes/:idUsuario",
+        element: <TodasSolicitudes/>
+      },
+      {
+        path: "/DetalleSolicitud/:id",
+        element: <DetalleSolicitud/>
+      },
+      {
+        path: "/CrearSolicitud",
+        element: <FormCrearSolicitud/>
+      },
+      {
+        path: "/InscripcionEvento",
+        element: <FormInscripcionEvento/>
+      },
+      {
+        path: "/CrearRetroalimentacion",
+        element: <FormRetro/>
       },
     ]
-  },
-  {
-    path: "/register",
-    element: <Register/>,
-  },
-  {
-    path: "/login",
-    element: <Login/>,
   },
 ]);
 
