@@ -43,11 +43,6 @@ const Home = () => {
         setSolicitudes(res.data)
     }
 
-    const deleteSolicitud = async (id) => {
-        await axios.delete(`${URL}${id}/`)
-        getSolicitudes()
-    }
-
     return (
         <div className='container'>
             <div className='row'>
@@ -55,9 +50,9 @@ const Home = () => {
                     <table className='table'>
                         <thead className='table-primary'>
                             <tr>
-                                <th>Title</th>
-                                <th>Content</th>
-                                <th>Actions</th>
+                                <th>Nombre</th>
+                                <th>descripción</th>
+                                <th>Estado</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -68,7 +63,7 @@ const Home = () => {
                                     <td>{solicitud.estado}</td>
                                     <td>
                                         {/*<link to={`/edit/${blog.id}`} className="btn btn-info">Editar</link>*/}
-                                        <button onClick={() => deleteSolicitud(solicitud.id)} className='btn btn-danger'>Eliminar</button>
+                                        {/*<button onClick={() => deleteSolicitud(solicitud.id)} className='btn btn-danger'>Eliminar</button>*/}
                                     </td>
                                 </tr>
                             ))}
