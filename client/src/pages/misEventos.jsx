@@ -1,21 +1,23 @@
 import React from 'react'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 
 import { useState, useEffect} from 'react';
 
 
-const URL = 'http://localhost:8000/api/eventos/';
+const URL = 'http://localhost:8000/api/usuario/';
 
-const TodosEventos = () => {
+const TodosMisEventos = () => {
     const [Eventos, setEventos] = useState([])
     useEffect(() => {
         getEventos()
     },[])
+    const {id} = useParams()
 
     const getEventos = async () => {
-        const res = await axios.get(URL)
-        setEventos(res.data)
+        const res = await axios.get(`${URL}${id}/eventos/`)
+        console.log(res.data)
+        setEventos(res.data.Eventos)
     }
 
 
@@ -53,4 +55,4 @@ const TodosEventos = () => {
     )
 }
 
-export default TodosEventos;
+export default TodosMisEventos;

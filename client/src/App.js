@@ -24,6 +24,7 @@ import Navbar from "./components/Navbar"
 import "./style.scss"
 import CompCrearEvento from "./pages/CrearEvento";
 import NotFound from "./pages/NotFound";
+import TodosMisEventos from "./pages/misEventos";
 
 // A Base for all pages on our site
 const Layout = () => {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "/CrearRetroalimentacion",
         element: <FormRetro/>
+      },
+      {
+        path:"/EventosInscritos/:id",
+        element: <TodosMisEventos />
       },
       {
         path: "*",

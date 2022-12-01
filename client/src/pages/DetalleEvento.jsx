@@ -27,7 +27,7 @@ const DetalleEvento = () => {
         <div className='container'>
             <div className="card">
                 <div className="card-header">
-                    <h5 className="card-title">{evento.nombre}</h5>
+                    <h5 className="card-title text-center">{evento.nombre}</h5>
                 </div>
                 <ul className="card-body list-group list-group-flush">
                 <li className="list-group-item">Descripcion: {evento.descripcion}</li>
@@ -37,7 +37,7 @@ const DetalleEvento = () => {
                     <li className='list-group-item'>Fecha Fin: {evento.fechaFin}</li>
                     <li className='list-group-item'>Duracion: {evento.duracion} horas</li>
                 </ul>
-                <div className="card-footer">
+                <div className="card-footer text-center">
                     <BotonInscribir idUsuario={idUsuario} idEvento={idEvento}></BotonInscribir>
                 </div>
             </div>

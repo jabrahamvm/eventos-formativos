@@ -6,14 +6,17 @@ const URL = 'http://localhost:8000/api/usuario/inscribir/';
 
 const BotonInscribir = ({idUsuario, idEvento}) => {
 
+    const [inscrito, setInscrito] = useState('false')
+
     const inscripcion = async () => {
         const res = await axios.post(URL,{idUsuario:idUsuario,idEvento:idEvento})
-        console.log(res)
+        console.log(res.data)
+        setInscrito('true')
     }
 
     return (
         <form onSubmit={inscripcion}>
-            <button type='submit' className='btn btn-success'>Inscribirme</button>
+            <button type='submit' className='btn btn-success' disabled={inscrito}>Inscribirme</button>
         </form>
     )
 }

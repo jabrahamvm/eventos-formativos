@@ -20,7 +20,7 @@ export const misEventos = async (req, res) => {
                 idUsuario:req.params.id
             }
         })
-        res.json(inscripciones)
+        res.json(inscripciones[0])
     } catch (error) {
         res.json({message: error.message})
     }
