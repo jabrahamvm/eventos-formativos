@@ -78,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "*",
         element: <NotFound />
+      },
+      {
+        path: "/usuario/:idResponsable/crearEvento/",
+        element: <CompCrearEvento />
       }
     ]
   },
