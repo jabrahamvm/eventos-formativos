@@ -1,35 +1,7 @@
-/*import React from 'react';
-
-
-const Home = () => {
-    return (
-        <section id="Eventos">
-            <article>
-                <div className='eventosDisponibles'>
-                    <h1>Eventos disponibles</h1>
-                    <ul>
-                        <li>Evento 1</li>
-                        <li>Evento 2</li>
-                        <li>Evento 3</li>
-                        <li>Evento 4</li>
-                    </ul>
-                    
-                </div>
-                <div className='detallesEvento'>
-                    <h1>Detalles de Evento</h1>
-                </div>
-            </article>
-
-        </section>
-    )
-}
-
-export default Home
-*/
 import React from 'react'
 import axios from 'axios';
 import { useState, useEffect} from 'react';
-//import {link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const URL = 'http://localhost:8000/api/solicitudes/';
 
@@ -54,6 +26,7 @@ const TodasSolicitudes = () => {
                                 <th>Nombre</th>
                                 <th>descripción</th>
                                 <th>Estado</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,10 +35,7 @@ const TodasSolicitudes = () => {
                                     <td>{solicitud.titulo}</td>
                                     <td>{solicitud.descripcion}</td>
                                     <td>{solicitud.estado}</td>
-                                    <td>
-                                        {/*<link to={`/edit/${blog.id}`} className="btn btn-info">Editar</link>*/}
-                                        {/*<button onClick={() => deleteSolicitud(solicitud.id)} className='btn btn-danger'>Eliminar</button>*/}
-                                    </td>
+                                    <td><Link to={`/Usuario/5/DetalleSolicitud/${solicitud.id}`} className='btn btn-primary mt-2 mb-2'>Ver más</Link></td>
                                 </tr>
                             ))}
                         </tbody>
