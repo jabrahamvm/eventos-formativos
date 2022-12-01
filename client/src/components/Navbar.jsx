@@ -13,7 +13,11 @@ const Navbar = () => {
                         Rodrigo Nevarez
                     </div>
                 </li>
-                    
+                <li>
+                    <Link className='link' to="/">
+                        <h6>Todos Eventos</h6>
+                    </Link>
+                </li>
                 <li>
                     <Link className='link' to="/EventosInscritos/5">
                         <h6>Mis Eventos</h6>
