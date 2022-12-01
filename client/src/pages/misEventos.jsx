@@ -8,7 +8,9 @@ import { useState, useEffect} from 'react';
 const URL = 'http://localhost:8000/api/usuario/';
 
 const TodosMisEventos = () => {
+
     const [Eventos, setEventos] = useState([])
+
     useEffect(() => {
         getEventos()
     },[])
@@ -19,7 +21,6 @@ const TodosMisEventos = () => {
         console.log(res.data)
         setEventos(res.data.Eventos)
     }
-
 
     return (
         <div className='container'>

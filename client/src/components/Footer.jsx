@@ -8,7 +8,7 @@ const Footer = () => {
               <div className="col-sm-12 col-md-6">
                 <h6>Acerca de</h6>
                 <p className="text-justify">
-                  Sistema de administración para gestión de eventos formativos. 
+                  Sistema para gestión de eventos formativos. 
                   Integrantes: 
                   Luis Hector Aguilar Valenzuela. 
                   Rodrigo Nevarez Escobar. 
