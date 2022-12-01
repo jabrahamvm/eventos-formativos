@@ -37,9 +37,6 @@ const DetalleSolicitud = () => {
                 <div className="card-footer text-center">
                     <Link to={`/usuario/${idUsuario}/crearEvento/`} className="btn btn-success">Crear Evento</Link>
                 </div>
-                <div className="card-footer text-center">
-                    <Link to={`/solicitudes/${idSolicitud}/retro/`} className="btn btn-success">Retroalimenación</Link>
-                </div>
                 <div>
                     <FormRetro idSolicitud={idSolicitud}></FormRetro>
                 </div>

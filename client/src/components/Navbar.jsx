@@ -13,7 +13,6 @@ const Navbar = () => {
                         Rodrigo Nevarez
                     </div>
                 </li>
-<<<<<<< HEAD
 
                 <li>
                     <Link className='link' to="/">
@@ -21,13 +20,6 @@ const Navbar = () => {
                     </Link>
                 </li>
                     
-=======
-                <li>
-                    <Link className='link' to="/">
-                        <h6>Todos Eventos</h6>
-                    </Link>
-                </li>
->>>>>>> deb934ff2a588dd5ba38a0ca5edd437f7413a0b9
                 <li>
                     <Link className='link' to="/EventosInscritos/5">
                         <h6>Mis Eventos</h6>

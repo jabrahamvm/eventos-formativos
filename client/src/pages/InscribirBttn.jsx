@@ -20,20 +20,6 @@ const BotonInscribir = ({idUsuario, idEvento}) => {
         const misEventos = Eventos.map((evento) => (console.log(evento.id)))
         console.log(`misEventos${misEventos}`)
     }
-
-    const [Eventos, setEventos] = useState([])
-
-    useEffect(() => {
-        getEventos()
-        
-    },[])
-
-    const getEventos = async () => {
-        const res = await axios.get(`http://localhost:8000/api/usuario/${idUsuario}/eventos/`)
-        console.log(res.data)
-        setEventos(res.data.Eventos)
-    }
-
     const Inscritos = Eventos.map((evento) => evento.id)
     const navigate = useNavigate()
     const inscripcion = async (e) => {
