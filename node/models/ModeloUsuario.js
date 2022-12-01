@@ -21,10 +21,4 @@ const ModeloUsuario = db.define('usuario',
     }
 )
 
-//ModeloUsuario.hasOne(ModeloPerfil, {foreignKey:"idResponsable"});
-/*ModeloSolicitud.belongsTo(ModeloResponsable,{
-    foreignKey: "idResponsable",
-    allowNull: false,
-});
-*/
 export default ModeloUsuario;
