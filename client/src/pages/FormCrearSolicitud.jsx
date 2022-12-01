@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Write = () => {
+const FormCrearSolicitud = () => {
     return (
-        <div>Write</div>
+        <div>FormCrearSolicitud</div>
     )
 }
 
-export default Write
+export default FormCrearSolicitud

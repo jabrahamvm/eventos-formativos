@@ -22,6 +22,7 @@ import Navbar from "./components/Navbar"
 
 // Import css file
 import "./style.scss"
+import CompCrearEvento from "./pages/CrearEvento";
 import NotFound from "./pages/NotFound";
 
 // A Base for all pages on our site
@@ -29,7 +30,7 @@ const Layout = () => {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <Outlet/>
       <Footer />
     </>
   );

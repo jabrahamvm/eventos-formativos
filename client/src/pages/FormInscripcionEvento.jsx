@@ -1,16 +1,11 @@
 import React from 'react'
 
-const Login = () => {
+const FormInscripcionEvento = () => {
     return (
-        <div className='auth'>
-            <h1>Login</h1>
-            <form>
-                <input type="text" placeholder='username'/>
-                <input type="text" placeholder='password'/>
-                <button>Login</button>
-            </form>
+        <div>
+            FormInscripcionEvento
         </div>
     )
 }
 
-export default Login
+export default FormInscripcionEvento
