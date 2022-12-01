@@ -1,6 +1,6 @@
 import db from '../database/db.js';
 // Importamos sequelize
-import { DataTypes } from "sequelize"
+import { DataTypes } from "sequelize";
 
 const ModeloUsuario = db.define('usuario',
     {
@@ -21,4 +21,10 @@ const ModeloUsuario = db.define('usuario',
     }
 )
 
+//ModeloUsuario.hasOne(ModeloPerfil, {foreignKey:"idResponsable"});
+/*ModeloSolicitud.belongsTo(ModeloResponsable,{
+    foreignKey: "idResponsable",
+    allowNull: false,
+});
+*/
 export default ModeloUsuario;

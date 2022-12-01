@@ -1,7 +1,8 @@
 import express from 'express';
+import { inscribirEstudiante, misEventos } from '../controllers/ControladorEstudiante.js';
 import { crearEvento, detallesEvento, mostrarEventos } from '../controllers/ControladorEvento.js';
 import { consultarResponsable } from '../controllers/ControladorResponsable.js';
-import { getRetroalimentaciones } from '../controllers/ControladorRetroalimentacion.js';
+import { crearRetroalimentacion, eliminarRetroalimentacion, getRetroalimentaciones, modificarRetroalimentacion } from '../controllers/ControladorRetroalimentacion.js';
 import { consultarAllSolicitudes, consultarSolicitud, crearSolicitud, modificarSolicitud,consultarMisSolicitudes } from '../controllers/ControladorSolicitud.js';
 import { consultarAllUsuarios, consultarUsuario } from '../controllers/ControladorUsuario.js';
 
@@ -28,10 +29,13 @@ router.get('/responsable/:id/solicitudes/', consultarMisSolicitudes)
 
 // Retroalimentaciones
 router.get('/solicitudes/:id/retro/',getRetroalimentaciones)
-
+router.post('/solicitudes/:id/retro/',crearRetroalimentacion)
+router.put('/solicitudes/retro/:id/', modificarRetroalimentacion)
+router.delete('/solicitudes/retro/:id/', eliminarRetroalimentacion)
 
 // Rutas para Estudiante
 // Mostrar mis eventos
 // Inscribirse a evento
-
+router.get('/usuario/:id/eventos/', misEventos)
+router.post('/usuario/inscribir/',inscribirEstudiante)
 export default router;
