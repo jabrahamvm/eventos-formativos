@@ -12,13 +12,16 @@ const CompCrearEvento = () => {
     const [fechaInicio, setFechaInicio] = useState('')
     const [fechaFin, setFechaFin] = useState('')
     const [modalidad, setModaliad] = useState('')
+    const [responsable, setResponsable] = useState('')
+
+    const navigate = useNavigate()
 
     const store = async (e) => {
         e.preventDefault()
         await axios.post(URI, {nombre: nombre, descripcion: descripcion,
             tipo: tipo, duracion: duracion, fechaInicio: fechaInicio, 
             fechaFin: fechaFin, modalidad: modalidad})
-        Navigate('/')
+        navigate('/')
     }
 
     return (
