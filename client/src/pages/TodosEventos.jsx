@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useState, useEffect} from 'react';
 
 
-const URL = 'http://localhost:8000/api/solicitudes/';
+const URL = 'http://localhost:8000/api/eventos';
 
 const TodosEventos = () => {
     const [Eventos, setEventos] = useState([])
