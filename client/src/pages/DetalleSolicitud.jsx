@@ -42,3 +42,4 @@ const DetalleSolicitud = () => {
 }
 
 export default DetalleSolicitud;
+
