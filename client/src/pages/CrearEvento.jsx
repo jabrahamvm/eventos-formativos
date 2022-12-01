@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
 const URI = 'http://localhost:8000/api/eventos/'
 
@@ -13,6 +13,7 @@ const CompCrearEvento = () => {
     const [fechaFin, setFechaFin] = useState('')
     const [modalidad, setModaliad] = useState('')
     const [responsable, setResponsable] = useState('')
+    const {idResponsable} = useParams()
 
     const navigate = useNavigate()
 
@@ -20,7 +21,7 @@ const CompCrearEvento = () => {
         e.preventDefault()
         await axios.post(URI, {nombre: nombre, descripcion: descripcion,
             tipo: tipo, duracion: duracion, fechaInicio: fechaInicio, 
-            fechaFin: fechaFin, modalidad: modalidad})
+            fechaFin: fechaFin, modalidad: modalidad, idResponsable:idResponsable})
         navigate('/')
     }
 
@@ -59,7 +60,7 @@ const CompCrearEvento = () => {
                     <input 
                         value={duracion}
                         onChange={ (e) => setDuracion(e.target.value)}
-                        type="Text"
+                        type="number"
                         className='form-control'
                     />
                 </div>
@@ -68,7 +69,7 @@ const CompCrearEvento = () => {
                     <input 
                         value={fechaInicio}
                         onChange={ (e) => setFechaInicio(e.target.value)}
-                        type="Text"
+                        type="date"
                         className='form-control'
                     />
                 </div>
@@ -77,7 +78,7 @@ const CompCrearEvento = () => {
                     <input 
                         value={fechaFin}
                         onChange={ (e) => setFechaFin(e.target.value)}
-                        type="Text"
+                        type="date"
                         className='form-control'
                     />
                 </div>
@@ -97,4 +98,4 @@ const CompCrearEvento = () => {
     )
 }
 
-export default CompCrearEvento
+export default CompCrearEvento;
