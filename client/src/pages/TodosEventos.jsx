@@ -27,9 +27,8 @@ const TodosEventos = () => {
                         <thead className='table-primary'>
                             <tr>
                                 <th>Nombre</th>
-                                <th>Descripción</th>
                                 <th>Tipo</th>
-                                <th>Fehca de inicio</th>
+                                <th>Fecha de inicio</th>
                                 <th>Fecha de finalización</th>
                                 <th></th>
                             </tr>
@@ -38,7 +37,6 @@ const TodosEventos = () => {
                             {Eventos.map((evento) => (
                                 <tr key={evento.id}>
                                     <td>{evento.nombre}</td>
-                                    <td>{evento.descripcion}</td>
                                     <td>{evento.tipo}</td>
                                     <td>{evento.fechaInicio}</td>
                                     <td>{evento.fechaFin}</td>
