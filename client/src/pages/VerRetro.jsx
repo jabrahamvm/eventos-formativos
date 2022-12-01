@@ -32,6 +32,7 @@ const FormRetro = ({idSolicitud}) => {
 
     return (
         <div>
+            <h4 className='m-3'>Retroalimentación</h4>
             {
                 retro.map((r) => (
                     <ul key={r.idRetroalimentacion}>
