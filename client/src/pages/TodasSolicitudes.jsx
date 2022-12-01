@@ -24,7 +24,6 @@ const TodasSolicitudes = () => {
                         <thead className='table-primary'>
                             <tr>
                                 <th>Nombre</th>
-                                <th>descripción</th>
                                 <th>Estado</th>
                                 <th></th>
                             </tr>
@@ -33,7 +32,6 @@ const TodasSolicitudes = () => {
                             {solicitudes.map((solicitud) => (
                                 <tr key={solicitud.id}>
                                     <td>{solicitud.titulo}</td>
-                                    <td>{solicitud.descripcion}</td>
                                     <td>{solicitud.estado}</td>
                                     <td><Link to={`/Usuario/5/DetalleSolicitud/${solicitud.id}`} className='btn btn-primary mt-2 mb-2'>Ver más</Link></td>
                                 </tr>
