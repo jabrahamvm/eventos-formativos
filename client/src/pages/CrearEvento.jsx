@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const URI = 'http://localhost:8000/api/eventos/'
 

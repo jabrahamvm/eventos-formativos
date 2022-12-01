@@ -16,7 +16,7 @@ const BotonInscribir = ({idUsuario, idEvento}) => {
 
     return (
         <form onSubmit={inscripcion}>
-            <button type='submit' className='btn btn-success' disabled={inscrito}>Inscribirme</button>
+            <button type='submit' className='btn btn-success'>Inscribirme</button>
         </form>
     )
 }
