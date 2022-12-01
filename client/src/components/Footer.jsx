@@ -7,7 +7,14 @@ const Footer = () => {
             <div className="row">
               <div className="col-sm-12 col-md-6">
                 <h6>Acerca de</h6>
-                <p className="text-justify">Sistema de administración para eventos formativos. </p>
+                <p className="text-justify">
+                  Sistema de administración para gestión de eventos formativos. 
+                  Integrantes: 
+                  Luis Hector Aguilar Valenzuela. 
+                  Rodrigo Nevarez Escobar. 
+                  Luis Juventino Velasquez Hidalgo. 
+                  Jesús Abraham Villalba Miranda. 
+                </p>
               </div>
     
               <div class="col-xs-6 col-md-3">
