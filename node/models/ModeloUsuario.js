@@ -1,6 +1,6 @@
 import db from '../database/db.js';
 // Importamos sequelize
-import { DataTypes } from "sequelize"
+import { DataTypes } from "sequelize";
 
 const ModeloUsuario = db.define('usuario',
     {
