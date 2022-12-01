@@ -10,18 +10,19 @@ const Navbar = () => {
                 <li>
                     <div className="logo">
                         <img src={Logo} alt="" />
+                        Rodrigo Nevarez
                     </div>
                 </li>
                     
                 <li>
                     <Link className='link' to="/">
-                        <h6>Eventos</h6>
+                        <h6>Mis Eventos</h6>
                     </Link>
                 </li>
 
                 <li>
                     <Link className='link' to="/TodasSolicitudes/6">
-                        <h6>Solicitudes</h6>
+                        <h6>Mis Solicitudes</h6>
                     </Link>
                 </li>
               
