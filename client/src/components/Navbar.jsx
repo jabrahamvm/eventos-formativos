@@ -24,12 +24,6 @@ const Navbar = () => {
                         <h6>Solicitudes</h6>
                     </Link>
                 </li>
-
-                <li>
-                    <Link className='button' to="/">
-                        <h6>Iniciar Sesión</h6>
-                    </Link>
-                </li>
               
             </ul>
         </nav>
