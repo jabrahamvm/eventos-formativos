@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         element: <TodasSolicitudes/>
       },
       {
-        path: "/DetalleSolicitud/:id",
+        path: "Usuario/:idUsuario/DetalleSolicitud/:idSolicitud",
         element: <DetalleSolicitud/>
       },
       {
