@@ -14,7 +14,7 @@ import TodasSolicitudes from "./pages/TodasSolicitudes"
 import DetalleSolicitud from "./pages/DetalleSolicitud"
 import FormCrearSolicitud from "./pages/FormCrearSolicitud"
 import FormInscripcionEvento from "./pages/FormInscripcionEvento"
-import FormRetro from "./pages/FormRetro"
+import FormRetro from "./pages/VerRetro"
 
 // Components on seperate folder
 import Footer from "./components/Footer"
@@ -73,6 +73,10 @@ const router = createBrowserRouter([
       },
       {
         path:"/EventosInscritos/:id",
+        element: <TodosMisEventos />
+      },
+      {
+        path:"/solicitudes/:idSolicitud/retro/",
         element: <TodosMisEventos />
       },
       {
