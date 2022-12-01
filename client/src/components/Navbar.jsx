@@ -16,6 +16,12 @@ const Navbar = () => {
                     
                 <li>
                     <Link className='link' to="/">
+                        <h6>Eventos</h6>
+                    </Link>
+                </li>
+                
+                <li>
+                    <Link className='link' to="/EventosInscritos/5">
                         <h6>Mis Eventos</h6>
                     </Link>
                 </li>
