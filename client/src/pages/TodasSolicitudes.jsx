@@ -26,13 +26,14 @@ const Home = () => {
 
 export default Home
 */
+import React from 'react'
 import axios from 'axios';
 import { useState, useEffect} from 'react';
 //import {link} from 'react-router-dom';
 
 const URL = 'http://localhost:8000/api/solicitudes/';
 
-const Home = () => {
+const TodasSolicitudes = () => {
     const [solicitudes, setSolicitudes] = useState([])
     useEffect(()=>{
         getSolicitudes()
@@ -75,4 +76,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default TodasSolicitudes;
