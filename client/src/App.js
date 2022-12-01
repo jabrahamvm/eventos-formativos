@@ -22,6 +22,7 @@ import Navbar from "./components/Navbar"
 
 // Import css file
 import "./style.scss"
+import NotFound from "./pages/NotFound";
 
 // A Base for all pages on our site
 const Layout = () => {
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
         element: <TodosEventos/>
       },
       {
-        path: "/DetalleEvento/:id",
+        path: "Usuario/:idUsuario/DetalleEvento/:idEvento",
         element: <DetalleEvento/>
       },
       {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
         path: "/CrearRetroalimentacion",
         element: <FormRetro/>
       },
+      {
+        path: "*",
+        element: <NotFound />
+      }
     ]
   },
 ]);

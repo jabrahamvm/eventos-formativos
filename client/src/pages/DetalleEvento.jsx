@@ -1,46 +1,44 @@
-import React from 'react'
+import React from 'react';
 import axios from 'axios';
 import { useState, useEffect} from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import BotonInscribir from './InscribirBttn';
 
-const URL = 'http://localhost:8000/api/solicitud/';
+const URL = 'http://localhost:8000/api/eventos/';
 
 const DetalleEvento = () => {
-    const [solicitudes, setSolicitudes] = useState([])
+    const [evento, setEvento] = useState([])
     useEffect(()=>{
-        getSolicitudes()
+        getEvento()
     },[])
+    const {idUsuario, idEvento} = useParams() 
+    let navigate = useNavigate();
 
-    const getSolicitudes = async () => {
-        const res = await axios.get(URL)
-        setSolicitudes(res.data)
+
+    const getEvento = async () => {
+        const res = await axios.get(`${URL}${idEvento}/`)
+        console.log(res.data)
+        if(res.data == null) navigate("*")
+        setEvento(res.data)
     }
+
 
     return (
         <div className='container'>
-            <div className='row'>
-                <div className='col'>
-                    <table className='table'>
-                        <thead className='table-primary'>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>descripción</th>
-                                <th>Estado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {solicitudes.map((solicitud) => (
-                                <tr key={solicitud.id}>
-                                    <td>{solicitud.titulo}</td>
-                                    <td>{solicitud.descripcion}</td>
-                                    <td>{solicitud.estado}</td>
-                                    <td>
-                                        {/*<link to={`/edit/${blog.id}`} className="btn btn-info">Editar</link>*/}
-                                        {/*<button onClick={() => deleteSolicitud(solicitud.id)} className='btn btn-danger'>Eliminar</button>*/}
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+            <div className="card">
+                <div className="card-header">
+                    <h5 className="card-title">{evento.nombre}</h5>
+                </div>
+                <ul className="card-body list-group list-group-flush">
+                <li className="list-group-item">Descripcion: {evento.descripcion}</li>
+                    <li className="list-group-item">Tipo de evento: {evento.tipo}</li>
+                    <li className="list-group-item">Modalidad: {evento.modalidad}</li>
+                    <li className='list-group-item'>Fecha Inicio: {evento.fechaInicio}</li>
+                    <li className='list-group-item'>Fecha Fin: {evento.fechaFin}</li>
+                    <li className='list-group-item'>Duracion: {evento.duracion} horas</li>
+                </ul>
+                <div className="card-footer">
+                    <BotonInscribir idUsuario={idUsuario} idEvento={idEvento}></BotonInscribir>
                 </div>
             </div>
         </div>
